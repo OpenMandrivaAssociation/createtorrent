@@ -10,7 +10,6 @@ Source0: %{name}-%{version}.tar.bz2
 License: GPL
 Group: File tools
 Url: http://www.createtorrent.com/
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: openssl-devel
 
 %description
