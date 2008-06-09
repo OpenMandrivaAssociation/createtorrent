@@ -1,12 +1,12 @@
 %define name createtorrent
-%define version 1.1.3
+%define version 1.1.4
 %define release %mkrel 1
 
 Summary: Create torrent files for BitTorrent
 Name: %{name}
 Version: %{version}
 Release: %{release}
-Source0: %{name}-%{version}.tar.bz2
+Source0: %{name}-%{version}.tar.gz
 License: GPL
 Group: File tools
 Url: http://www.createtorrent.com/
@@ -23,6 +23,8 @@ of files that are grouped together into a directory.
 %setup -q
 
 %build
+#gw else the configure check for libssl fails
+%define _disable_ld_as_needed 1
 %configure2_5x
 %make
 
