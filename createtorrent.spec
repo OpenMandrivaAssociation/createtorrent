@@ -1,12 +1,14 @@
 %define name createtorrent
 %define version 1.1.4
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary: Create torrent files for BitTorrent
 Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: %{name}-%{version}.tar.gz
+# (Anssi 06/2008) Fix linking (SHA1 is in -lcrypto, not -lssl):
+Patch0: createtorrent-1.1.4-linking.patch
 License: GPL
 Group: File tools
 Url: http://www.createtorrent.com/
@@ -21,10 +23,11 @@ of files that are grouped together into a directory.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-#gw else the configure check for libssl fails
-%define _disable_ld_as_needed 1
+# patch0
+autoreconf
 %configure2_5x
 %make
 
