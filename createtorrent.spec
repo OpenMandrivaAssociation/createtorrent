@@ -1,6 +1,6 @@
 %define name createtorrent
 %define version 1.1.4
-%define release %mkrel 2
+%define release %mkrel 3
 
 Summary: Create torrent files for BitTorrent
 Name: %{name}
