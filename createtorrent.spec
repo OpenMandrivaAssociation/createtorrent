@@ -11,7 +11,7 @@ Source0: %{name}-%{version}.tar.gz
 Patch0: createtorrent-1.1.4-linking.patch
 License: GPL
 Group: File tools
-Url: http://www.createtorrent.com/
+Url: https://www.createtorrent.com/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: openssl-devel
 
